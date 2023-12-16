@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +16,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.example.thriftshop.domain.ListingRepository;
 import com.example.thriftshop.domain.Listing;
 import com.example.thriftshop.domain.CategoryRepository;
+import com.example.thriftshop.domain.AppUserRepository;
 import com.example.thriftshop.domain.Category;
+import com.example.thriftshop.domain.AppUser;
 
 @Controller
 public class ThriftshopController {
@@ -26,16 +29,20 @@ public class ThriftshopController {
 	@Autowired
 	private CategoryRepository categoryRepository;
 
+	@Autowired
+	private AppUserRepository appUserRepository;
+
      @RequestMapping("/login")
 	public String login() {
 		return "login";
 	}
 
-	@RequestMapping("/APIDocumentation")
-	public String APIDocumentation() {
-		return "APIDocumentation";
-	}
-	//REST endpoint for calling all listings as json.
+	@RequestMapping(value = {"/APIDocumentation", "/"})
+    public String APIDocumentation() {
+        return "APIDocumentation";
+    }
+	// GET REST endpoint for calling all listings as json.
+	@CrossOrigin
     @RequestMapping(value="/listings", method = RequestMethod.GET)
     public @ResponseBody List <Listing> listingsRest(){
         List <Listing> expenses = (List<Listing>) listingRepository.findAll();
@@ -43,14 +50,16 @@ public class ThriftshopController {
         return expenses;
     }
 
-	//REST endpoint for calling fetching all listings as json.
+	//GET REST endpoint for calling fetching all listings as json.
+	@CrossOrigin
 	 @RequestMapping(value="/listings/{id}", method = RequestMethod.GET)
     public ResponseEntity<Optional<Listing>> findListingRest(@PathVariable("id")Long listingId){
         Optional<Listing> listing = listingRepository.findById(listingId);
         return ResponseEntity.ok().body(listing);
     }
 
-	//REST endpoint for fetching all categorys as json.
+	// GET REST endpoint for fetching all categorys as json.
+	@CrossOrigin
 	 @RequestMapping(value="/categorys", method = RequestMethod.GET)
     public @ResponseBody List <Category> categorysRest(){
         List <Category> expenses = (List<Category>) categoryRepository.findAll();
@@ -58,10 +67,28 @@ public class ThriftshopController {
         return expenses;
     }
 
-	//REST endpoint for calling category by id as json.
+	//GET REST endpoint for calling category by id as json.
+	@CrossOrigin
 	 @RequestMapping(value="/categorys/{id}", method = RequestMethod.GET)
     public ResponseEntity<Optional<Category>> findCategoryRest(@PathVariable("id")Long categoryId){
         Optional<Category> category = categoryRepository.findById(categoryId);
         return ResponseEntity.ok().body(category);
+    }
+
+	//GET REST endpoint for fetching all users as json.
+	@CrossOrigin
+	 @RequestMapping(value="/users", method = RequestMethod.GET)
+    public @ResponseBody List <AppUser> usersRest(){
+        List <AppUser> users = (List<AppUser>) appUserRepository.findAll();
+        
+        return users;
+    }
+
+	// GET REST endpoint for calling users by id as json.
+	@CrossOrigin
+	 @RequestMapping(value="/users/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Optional<AppUser>> findusersRest(@PathVariable("id")Long userId){
+        Optional<AppUser> user = appUserRepository.findById(userId);
+        return ResponseEntity.ok().body(user);
     }
 }

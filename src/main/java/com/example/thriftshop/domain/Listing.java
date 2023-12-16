@@ -1,14 +1,13 @@
 package com.example.thriftshop.domain;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -22,9 +21,9 @@ public class Listing {
     private BigDecimal price;
     private java.util.Date date;
 
-    //muuta byte[]:ksi
-    @Lob
-    private String picture;
+    
+    
+    private String pictureURL;
 
     private String condition;
     private String details;
@@ -35,12 +34,12 @@ public class Listing {
 
     public Listing () {}
 
-    public Listing(String name, BigDecimal price, java.util.Date date, String picture, String condition, String details,
+    public Listing(String name, BigDecimal price, java.util.Date date, String pictureURL, String condition, String details,
             Category category) {
         this.name = name;
         this.price = price;
         this.date = date;
-        this.picture = picture;
+        this.pictureURL = pictureURL;
         this.condition = condition;
         this.details = details;
         this.category = category;
@@ -78,12 +77,12 @@ public class Listing {
         this.date = date;
     }
 
-    public String getPicture() {
-        return picture;
+    public String getPictureURL() {
+        return pictureURL;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public void setPicture(String pictureURL) {
+        this.pictureURL = pictureURL;
     }
 
     public String getCondition() {
