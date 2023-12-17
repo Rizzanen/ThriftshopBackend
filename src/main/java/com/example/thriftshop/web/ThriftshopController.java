@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -91,4 +92,12 @@ public class ThriftshopController {
         Optional<AppUser> user = appUserRepository.findById(userId);
         return ResponseEntity.ok().body(user);
     }
+
+    // POST REST endpoint for saving a new listing
+    @CrossOrigin
+	 @RequestMapping(value="/listings", method = RequestMethod.POST)
+     public @ResponseBody Listing addListing(@RequestBody Listing listing){
+        return listingRepository.save(listing);
+     }
+     
 }
