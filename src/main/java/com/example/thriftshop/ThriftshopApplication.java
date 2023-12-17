@@ -65,8 +65,8 @@ public class ThriftshopApplication {
 			listingRepository.save(new Listing("Iphone 12", new BigDecimal("280"), new Date(System.currentTimeMillis()), "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaImfFi7HBXOsaRl6jACfQLfP7RwdEX8DzDQ&usqp=CAU", "Excellent", "Used iphone for sale with cheap prise!!",categoryRepository.findByName("Electronics").get(0)));
 
 
-			AppUser user1 = new AppUser("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER", "admin@mail.com", "1231231231", "katu 12", "00100", "Helsinki");
-			AppUser user2 = new AppUser("admin", "$2a$08$bCCcGjB03eulCWt3CY0AZew2rVzXFyouUolL5dkL/pBgFkUH9O4J2", "ADMIN","user@mail.com", "1231231231", "katu 13", "00110", "Helsinki");
+			AppUser user1 = new AppUser("user", "user", "USER", "admin@mail.com", "1231231231", "katu 12", "00100", "Helsinki");
+			AppUser user2 = new AppUser("admin", "admin", "ADMIN","user@mail.com", "1231231231", "katu 13", "00110", "Helsinki");
 
 			appUserRepository.saveAll(Arrays.asList(user1, user2));
         };

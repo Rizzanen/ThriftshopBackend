@@ -108,6 +108,12 @@ public class Listing {
     public void setCategory(Category category) {
         this.category = category;
     }
+
+    @Override
+    public String toString() {
+        return "Listing [id=" + id + ", name=" + name + ", price=" + price + ", date=" + date + ", pictureURL="
+                + pictureURL + ", condition=" + condition + ", details=" + details + ", category=" + category + "]";
+    }
     
     
 }
