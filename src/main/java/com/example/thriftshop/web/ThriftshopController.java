@@ -93,6 +93,19 @@ public class ThriftshopController {
         Optional<AppUser> user = appUserRepository.findById(userId);
         return ResponseEntity.ok().body(user);
     }
+    // PUT REST endpoint for updating the userData
+    @CrossOrigin
+	 @RequestMapping(value="/users", method = RequestMethod.PUT)
+    public ResponseEntity<AppUser> modifyUserRest(@RequestBody AppUser appUser){
+        Long userId = appUser.getId();
+        if (appUserRepository.existsById(userId)) {
+            AppUser modifiedUser = appUserRepository.save(appUser);
+            return ResponseEntity.ok().body(modifiedUser);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
+    }
 
     // POST REST endpoint for saving a new listing
     @CrossOrigin
