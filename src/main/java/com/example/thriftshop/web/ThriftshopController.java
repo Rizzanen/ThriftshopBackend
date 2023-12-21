@@ -52,12 +52,34 @@ public class ThriftshopController {
         return expenses;
     }
 
-	//GET REST endpoint for calling fetching all listings as json.
+	//GET REST endpoint for fetching listing with id as json.
 	@CrossOrigin
 	 @RequestMapping(value="/listings/{id}", method = RequestMethod.GET)
     public ResponseEntity<Optional<Listing>> findListingRest(@PathVariable("id")Long listingId){
         Optional<Listing> listing = listingRepository.findById(listingId);
         return ResponseEntity.ok().body(listing);
+    }
+
+     @CrossOrigin
+	 @RequestMapping(value="/listings", method = RequestMethod.PUT)
+    public ResponseEntity<Listing> modifyListingRest(@RequestBody Listing listing){
+        Long listingId = listing.getId();
+        if (listingRepository.existsById(listingId)) {
+            Listing modifiedListing = listingRepository.save(listing);
+            return ResponseEntity.ok().body(modifiedListing);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
+    }
+
+    //GET REST endpoint for fetching users listings with userid as json.
+	@CrossOrigin
+	 @RequestMapping(value="/listings/users/{id}", method = RequestMethod.GET)
+    public @ResponseBody List <Listing> findusersListingsRest(@PathVariable("id")Long userId){
+        List<Listing> listings = listingRepository.findByAppUserUserId(userId);
+        System.out.print(listings);
+        return listings;
     }
 
 	// GET REST endpoint for fetching all categorys as json.
@@ -97,7 +119,7 @@ public class ThriftshopController {
     @CrossOrigin
 	 @RequestMapping(value="/users", method = RequestMethod.PUT)
     public ResponseEntity<AppUser> modifyUserRest(@RequestBody AppUser appUser){
-        Long userId = appUser.getId();
+        Long userId = appUser.getUserId();
         if (appUserRepository.existsById(userId)) {
             AppUser modifiedUser = appUserRepository.save(appUser);
             return ResponseEntity.ok().body(modifiedUser);

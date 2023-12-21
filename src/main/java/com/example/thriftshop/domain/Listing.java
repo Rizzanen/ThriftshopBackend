@@ -32,10 +32,14 @@ public class Listing {
     @JoinColumn(name = "categoryId")
     private Category category;
 
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private AppUser appUser;
+
     public Listing () {}
 
     public Listing(String name, BigDecimal price, java.util.Date date, String pictureURL, String condition, String details,
-            Category category) {
+            Category category, AppUser appUser) {
         this.name = name;
         this.price = price;
         this.date = date;
@@ -43,6 +47,7 @@ public class Listing {
         this.condition = condition;
         this.details = details;
         this.category = category;
+        this.appUser = appUser;
     }
 
     public Long getId() {
@@ -81,7 +86,7 @@ public class Listing {
         return pictureURL;
     }
 
-    public void setPicture(String pictureURL) {
+    public void setPictureURL(String pictureURL) {
         this.pictureURL = pictureURL;
     }
 
@@ -107,6 +112,14 @@ public class Listing {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+    
+    public AppUser getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
     }
 
     @Override

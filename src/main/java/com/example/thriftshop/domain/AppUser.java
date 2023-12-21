@@ -1,5 +1,7 @@
 package com.example.thriftshop.domain;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -7,7 +9,7 @@ public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id", nullable = false, updatable = false)
-    private Long id;
+    private Long userId;
 
    @Column(name = "username", nullable = false, unique = true)
     private String username;
@@ -23,6 +25,9 @@ public class AppUser {
     private String address;
     private String postcode;
     private String city;
+
+    @OneToMany(mappedBy = "appUser", cascade = CascadeType.ALL)
+    private List<Listing> listings;
     
 
     public AppUser() {
@@ -42,13 +47,13 @@ public class AppUser {
     }
 
 
-    public Long getId() {
-        return id;
+    public Long getUserId() {
+        return userId;
     }
 
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
 
@@ -134,7 +139,7 @@ public class AppUser {
 
     @Override
     public String toString() {
-        return "AppUser [id=" + id + ", username=" + username + ", password=" + password + ", role=" + role
+        return "AppUser [UserId=" + userId + ", username=" + username + ", password=" + password + ", role=" + role
                 + ", email=" + email + ", phone=" + phone + ", address=" + address + ", postcode=" + postcode
                 + ", city=" + city + "]";
     }
