@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -22,8 +23,8 @@ public class Listing {
     private java.util.Date date;
 
     
-    
-    private String pictureURL;
+    @Lob
+    private byte[] pictureData;
 
     private String condition;
     private String details;
@@ -38,12 +39,12 @@ public class Listing {
 
     public Listing () {}
 
-    public Listing(String name, BigDecimal price, java.util.Date date, String pictureURL, String condition, String details,
+    public Listing(String name, BigDecimal price, java.util.Date date, byte[] pictureData, String condition, String details,
             Category category, AppUser appUser) {
         this.name = name;
         this.price = price;
         this.date = date;
-        this.pictureURL = pictureURL;
+        this.pictureData = pictureData;
         this.condition = condition;
         this.details = details;
         this.category = category;
@@ -82,12 +83,12 @@ public class Listing {
         this.date = date;
     }
 
-    public String getPictureURL() {
-        return pictureURL;
+    public byte[] getPictureData() {
+        return pictureData;
     }
 
-    public void setPictureURL(String pictureURL) {
-        this.pictureURL = pictureURL;
+    public void setPictureData(byte[] pictureData) {
+        this.pictureData = pictureData;
     }
 
     public String getCondition() {
@@ -125,7 +126,7 @@ public class Listing {
     @Override
     public String toString() {
         return "Listing [id=" + id + ", name=" + name + ", price=" + price + ", date=" + date + ", pictureURL="
-                + pictureURL + ", condition=" + condition + ", details=" + details + ", category=" + category + "]";
+                + pictureData + ", condition=" + condition + ", details=" + details + ", category=" + category + "]";
     }
     
     
