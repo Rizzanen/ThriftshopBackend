@@ -92,40 +92,40 @@ public class ThriftshopApplication {
 			
 
 			listingRepository.save(new Listing("Makia Shirt", new BigDecimal("40"), new Date(System.currentTimeMillis()),
-			imageBytes1, "Good", "Selling Makia shirt. Good condition. ",
+			imageBytes1, "Good", "Selling Makia shirt. Good condition. ",4,
 			categoryRepository.findByName("Fashion").get(0), appUserRepository.findByUsername("user")));
 
-			listingRepository.save(new Listing("Carhart hoodie", new BigDecimal("80"), new Date(System.currentTimeMillis()), imageBytes2, "Good", "New carhartt hoodie. Been in my closet for a year. the tag is still on. ",categoryRepository.findByName("Fashion").get(0), appUserRepository.findByUsername("admin")));
+			listingRepository.save(new Listing("Carhart hoodie", new BigDecimal("80"), new Date(System.currentTimeMillis()), imageBytes2, "Good", "New carhartt hoodie. Been in my closet for a year. the tag is still on. ",2,categoryRepository.findByName("Fashion").get(0), appUserRepository.findByUsername("admin")));
 
 
-			listingRepository.save(new Listing("CCM hockey stick", new BigDecimal("5"), new Date(System.currentTimeMillis()), imageBytes3, "Good", "Brand new hockeystick. ",categoryRepository.findByName("Sport Equipment").get(0), appUserRepository.findByUsername("user")));
+			listingRepository.save(new Listing("CCM hockey stick", new BigDecimal("5"), new Date(System.currentTimeMillis()), imageBytes3, "Good", "Brand new hockeystick. ",6,categoryRepository.findByName("Sport Equipment").get(0), appUserRepository.findByUsername("user")));
 
 
-			listingRepository.save(new Listing("Bauer hockey stick", new BigDecimal("20"), new Date(System.currentTimeMillis()), imageBytes4, "Good", "Brand new hockeystick. ",categoryRepository.findByName("Sport Equipment").get(0), appUserRepository.findByUsername("admin")));
+			listingRepository.save(new Listing("Bauer hockey stick", new BigDecimal("20"), new Date(System.currentTimeMillis()), imageBytes4, "Good", "Brand new hockeystick. ",8,categoryRepository.findByName("Sport Equipment").get(0), appUserRepository.findByUsername("admin")));
 
 
-			listingRepository.save(new Listing("Ikea sofa", new BigDecimal("180"), new Date(System.currentTimeMillis()), imageBytes5, "Good", "Selling this sofa. I've had it for 2 years.",categoryRepository.findByName("Furniture").get(0), appUserRepository.findByUsername("user")));
+			listingRepository.save(new Listing("Ikea sofa", new BigDecimal("180"), new Date(System.currentTimeMillis()), imageBytes5, "Good", "Selling this sofa. I've had it for 2 years.",1,categoryRepository.findByName("Furniture").get(0), appUserRepository.findByUsername("user")));
 
 
-			listingRepository.save(new Listing("Ikea Bed 180cm wide", new BigDecimal("280"), new Date(System.currentTimeMillis()), imageBytes6, "Good", "Selling. I've had it for 2 years. ",categoryRepository.findByName("Furniture").get(0), appUserRepository.findByUsername("admin")));
+			listingRepository.save(new Listing("Ikea Bed 180cm wide", new BigDecimal("280"), new Date(System.currentTimeMillis()), imageBytes6, "Good", "Selling. I've had it for 2 years. ",1,categoryRepository.findByName("Furniture").get(0), appUserRepository.findByUsername("admin")));
 
 
-			listingRepository.save(new Listing("Pikachu", new BigDecimal("30"), new Date(System.currentTimeMillis()), imageBytes7, "Good", "Good condition pikachu looking for new owner.",categoryRepository.findByName("Toys").get(0), appUserRepository.findByUsername("user")));
+			listingRepository.save(new Listing("Pikachu", new BigDecimal("30"), new Date(System.currentTimeMillis()), imageBytes7, "Good", "Good condition pikachu looking for new owner.",1,categoryRepository.findByName("Toys").get(0), appUserRepository.findByUsername("user")));
 
 
-			listingRepository.save(new Listing("Bulbasaur", new BigDecimal("30"), new Date(System.currentTimeMillis()), imageBytes8, "Good", "Good condition Bulbasaur looking for new owner.",categoryRepository.findByName("Toys").get(0), appUserRepository.findByUsername("admin")));
+			listingRepository.save(new Listing("Bulbasaur", new BigDecimal("30"), new Date(System.currentTimeMillis()), imageBytes8, "Good", "Good condition Bulbasaur looking for new owner.",2,categoryRepository.findByName("Toys").get(0), appUserRepository.findByUsername("admin")));
 
 
-			listingRepository.save(new Listing(" Beach Rolex", new BigDecimal("30"), new Date(System.currentTimeMillis()), imageBytes9, "Excellent", "Excellent condition (Beach) Rolex for sale.",categoryRepository.findByName("Watches").get(0), appUserRepository.findByUsername("user")));
+			listingRepository.save(new Listing(" Beach Rolex", new BigDecimal("30"), new Date(System.currentTimeMillis()), imageBytes9, "Excellent", "Excellent condition (Beach) Rolex for sale.",50,categoryRepository.findByName("Watches").get(0), appUserRepository.findByUsername("user")));
 
 
-			listingRepository.save(new Listing("Tommy Hilfiger watch", new BigDecimal("80"), new Date(System.currentTimeMillis()), imageBytes10, "Excellent", "Excellent condition Tommy Hilfiger watch for sale.",categoryRepository.findByName("Watches").get(0), appUserRepository.findByUsername("admin")));
+			listingRepository.save(new Listing("Tommy Hilfiger watch", new BigDecimal("80"), new Date(System.currentTimeMillis()), imageBytes10, "Excellent", "Excellent condition Tommy Hilfiger watch for sale.",10,categoryRepository.findByName("Watches").get(0), appUserRepository.findByUsername("admin")));
 
 
-			listingRepository.save(new Listing("Iphone 15", new BigDecimal("480"), new Date(System.currentTimeMillis()), imageBytes11, "Excellent", "New iphone for sale with cheap prise!!",categoryRepository.findByName("Electronics").get(0), appUserRepository.findByUsername("user")));
+			listingRepository.save(new Listing("Iphone 15", new BigDecimal("480"), new Date(System.currentTimeMillis()), imageBytes11, "Excellent", "New iphone for sale with cheap prise!!",48,categoryRepository.findByName("Electronics").get(0), appUserRepository.findByUsername("user")));
 
 
-			listingRepository.save(new Listing("Iphone 12", new BigDecimal("280"), new Date(System.currentTimeMillis()), imageBytes12, "Excellent", "Used iphone for sale with cheap prise!!",categoryRepository.findByName("Electronics").get(0), appUserRepository.findByUsername("admin")));
+			listingRepository.save(new Listing("Iphone 12", new BigDecimal("280"), new Date(System.currentTimeMillis()), imageBytes12, "Excellent", "Used iphone for sale with cheap prise!!",100,categoryRepository.findByName("Electronics").get(0), appUserRepository.findByUsername("admin")));
 
 
 

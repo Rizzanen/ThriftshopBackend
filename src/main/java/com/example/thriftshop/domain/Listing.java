@@ -28,6 +28,9 @@ public class Listing {
 
     private String condition;
     private String details;
+    private int itemAmount;
+
+ 
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
@@ -39,7 +42,7 @@ public class Listing {
 
     public Listing () {}
 
-    public Listing(String name, BigDecimal price, java.util.Date date, byte[] pictureData, String condition, String details,
+    public Listing(String name, BigDecimal price, java.util.Date date, byte[] pictureData, String condition, String details, int itemAmount,
             Category category, AppUser appUser) {
         this.name = name;
         this.price = price;
@@ -47,6 +50,7 @@ public class Listing {
         this.pictureData = pictureData;
         this.condition = condition;
         this.details = details;
+        this.itemAmount = itemAmount;
         this.category = category;
         this.appUser = appUser;
     }
@@ -101,6 +105,14 @@ public class Listing {
 
     public String getDetails() {
         return details;
+    }
+
+       public int getItemAmount() {
+        return itemAmount;
+    }
+
+    public void setItemAmount(int itemAmount) {
+        this.itemAmount = itemAmount;
     }
 
     public void setDetails(String details) {
