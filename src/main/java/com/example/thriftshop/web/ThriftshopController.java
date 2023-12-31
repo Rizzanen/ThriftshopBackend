@@ -96,6 +96,7 @@ public Listing addListing(
         @RequestPart("date") String date,
         @RequestPart("condition") String condition,
         @RequestPart("details") String details,
+        @RequestPart("itemAmount") String itemAmount,
         @RequestPart("category") String categoryJson,
         @RequestPart("appUser") String appUserJson,
         @RequestPart("pictureData") MultipartFile pictureData
@@ -123,6 +124,7 @@ public Listing addListing(
     listing.setDate(new Date()); 
     listing.setCondition(condition);
     listing.setDetails(details);
+    listing.setItemAmount(Integer.parseInt(itemAmount));
     listing.setCategory(category);
     listing.setAppUser(appUser);
     listing.setPictureData(pictureDataBytes);
