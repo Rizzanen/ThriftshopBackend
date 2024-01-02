@@ -16,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -244,8 +243,8 @@ public Listing addListing(
   @CrossOrigin
 	 @RequestMapping(value="/reset", method = RequestMethod.GET)
     public String ResetDb(){
-        categoryRepository.deleteAll();
         listingRepository.deleteAll();
+        categoryRepository.deleteAll();
         appUserRepository.deleteAll();
 
         String imageUrl1 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVs6xgO-hoQpiit6ibXDLntVTvB_-NEVpe8g&usqp=CAU";
