@@ -2,7 +2,11 @@ package com.example.thriftshop.web;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -74,6 +78,8 @@ public class ThriftshopController {
         return ResponseEntity.ok().body(listing);
     }
 
+   
+
      @CrossOrigin
 	 @RequestMapping(value="/listings", method = RequestMethod.PUT)
     public ResponseEntity<Listing> modifyListingRest(@RequestBody Listing listing){
@@ -87,6 +93,8 @@ public class ThriftshopController {
 
     }
 
+   
+
      // POST REST endpoint for saving a new listing. This takes multipart data from frontEnd and then the listing is constructed from there and file is converted to byte[]
       @CrossOrigin
     @PostMapping(value = "/listings", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
@@ -96,7 +104,6 @@ public Listing addListing(
         @RequestPart("date") String date,
         @RequestPart("condition") String condition,
         @RequestPart("details") String details,
-        @RequestPart("itemAmount") String itemAmount,
         @RequestPart("category") String categoryJson,
         @RequestPart("appUser") String appUserJson,
         @RequestPart("pictureData") MultipartFile pictureData
@@ -124,7 +131,6 @@ public Listing addListing(
     listing.setDate(new Date()); 
     listing.setCondition(condition);
     listing.setDetails(details);
-    listing.setItemAmount(Integer.parseInt(itemAmount));
     listing.setCategory(category);
     listing.setAppUser(appUser);
     listing.setPictureData(pictureDataBytes);
@@ -221,5 +227,6 @@ public Listing addListing(
         }
     }
      
-    
+  
+   
 }
