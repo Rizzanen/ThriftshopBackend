@@ -196,6 +196,17 @@ public Listing addListing(
         return users;
     }
 
+    @CrossOrigin
+	 @RequestMapping(value="/users", method = RequestMethod.POST)
+    public AppUser AddUsersRest(@RequestBody AppUser appUser){
+        AppUser newUser = new AppUser(appUser.getUsername(), appUser.getPassword(), appUser.getRole(), appUser.getEmail(), appUser.getPhone(), appUser.getAddress(), appUser.getPostcode(), appUser.getCity() );
+
+        appUserRepository.save(newUser);
+        
+     
+        return newUser;
+    }
+
 	// GET REST endpoint for calling users by id as json.
 	@CrossOrigin
 	 @RequestMapping(value="/users/{id}", method = RequestMethod.GET)
