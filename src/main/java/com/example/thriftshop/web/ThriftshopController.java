@@ -65,15 +65,9 @@ public class ThriftshopController {
 
 
 
-     @RequestMapping("/login")
-	public String login() {
-		return "login";
-	}
+ 
 
-	@RequestMapping(value = {"/APIDocumentation", "/"})
-    public String APIDocumentation() {
-        return "APIDocumentation";
-    }
+	
 	// GET REST endpoint for calling all listings as json.
 	@CrossOrigin
     @RequestMapping(value="/listings", method = RequestMethod.GET)

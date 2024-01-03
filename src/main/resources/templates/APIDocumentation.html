@@ -5,35 +5,169 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
   <body style="background-color: rgb(238, 238, 238)">
-    <div id="header">
-      <h1>Thriftshop API Documentation</h1>
-    </div>
-    <div id="listings">
-      <h2>Get all listings with endpoint GET /listings</h2>
-    </div>
-    <div id="listingsById">
-      <h2>Get listing by id with endpoint GET /listings/{id}</h2>
-    </div>
-    <div id="categorys">
-      <h2>Get all categorys with endpoint GET /categorys</h2>
-    </div>
-    <div id="categorysById">
-      <h2>Get category by id with endpoint GET /categorys/{id}</h2>
-    </div>
-    <div id="users">
-      <h2>Get users endpoint GET /users</h2>
-    </div>
-    <div id="usersid">
-      <h2>Get users by id with endpoint GET /users/{id}</h2>
-    </div>
-    <div id="checkLogin">
-      <h2>
-        Check if username and password matches in database with endpoint POST
-        /checkLoginRequest
-      </h2>
-    </div>
-    <div id="PUTuser">
-      <h2>Update existing user data with PUT /users</h2>
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50vw;
+        margin-left: auto;
+        margin-right: auto;
+      "
+    >
+      <div>
+        <h1>Thriftshop Back End Api Documentation</h1>
+      </div>
+      <div>
+        <h2>URL: https://thriftshoprest-6dad2e66a25b.herokuapp.com/</h2>
+      </div>
+      <div style="font-size: 17px; width: 80%; display: flex">
+        <h1 style="width: 50%">Method</h1>
+        <h1>Route</h1>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">GET</h2>
+        <h2 style="margin: 0">/listings</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">GET</h2>
+        <h2 style="margin: 0">/listings/{id}</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">PUT</h2>
+        <h2 style="margin: 0">/listings</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">POST</h2>
+        <h2 style="margin: 0">/listings</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">DELETE</h2>
+        <h2 style="margin: 0">/listings/{id}</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">GET</h2>
+        <h2 style="margin: 0">/listings/users/{id}</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">GET</h2>
+        <h2 style="margin: 0">/categorys</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">GET</h2>
+        <h2 style="margin: 0">/categorys/id</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">GET</h2>
+        <h2 style="margin: 0">/users</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">GET</h2>
+        <h2 style="margin: 0">/users/{id}</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">PUT</h2>
+        <h2 style="margin: 0">/users</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">POST</h2>
+        <h2 style="margin: 0">/checkLoginRequest</h2>
+      </div>
+      <div
+        style="
+          display: flex;
+          width: 80%;
+          border-bottom: 1px solid black;
+          margin-top: 0.5vh;
+        "
+      >
+        <h2 style="width: 50%; margin: 0">GET</h2>
+        <h2 style="margin: 0">/reset</h2>
+      </div>
     </div>
   </body>
 </html>
